@@ -45,17 +45,6 @@ th, td {
     cursor: pointer;
 }
 
-
-/* a{
-    display: inline-block;
-    margin: 10px 0;
-    padding: 10px 15px;
-    background: #28a745;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-} */
-
 .error {
     color: red;
     text-align: center;
@@ -110,22 +99,19 @@ th, td {
 }
 
 .navbar {
+    width: 80vw;
+    top: 0;
     background: #9c9c9c;
-    padding: 12px 24px;
-    display: flex;
+    padding: 12px 20px;
     position: sticky;
     margin: auto;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 80vw;
-    padding: 20px;
-    box-shadow: 0 0 10px #ccc;
+    display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     gap: 20px;
+    z-index: 1000;
 }
 
 .nav-links {
