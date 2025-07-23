@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="https://www.vervenest.com/assets/site/images/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Vervenest Technologies Pvt. Ltd.,</title>
+</head>
+<body>
+    {% if show_navbar %}
+    <nav class="navbar">
+    <div class="nav-links">
+        <a href="/dashboard">Dashboard</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="nav-links">
+        <a href="/profile">
+            <img src="{{ url_for('static', path='profile.png') }}" alt="Profile" />
+        </a>
+    </div>
+    </nav>
+    {% endif %}
+    <div class="container">
+        {% block content %}
+        <!-- Child templates insert content here -->
+        {% endblock %}
+
+    </div>
+</body>
+</html>

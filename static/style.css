@@ -1,0 +1,303 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    font-size: 18px;
+    width: auto;
+}
+.container {
+    width: 80vw;
+    height: 90vh;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px #ccc;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+table, th, td {
+    border: 1px solid #ccc;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #28a745; /* green */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0.4rem auto;
+    font-size: 14px;
+}
+
+.btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+
+/* a{
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+} */
+
+.error {
+    color: red;
+    text-align: center;
+    font-weight: bold;
+}
+
+.login-box{
+    display: inline-block;
+    padding: 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid black;
+    text-align: center;
+    width: 300px;
+}
+
+.login-box .btn {
+    width: 30%;
+    padding: 0.4rem;
+    border-radius: 0.7rem;
+}
+.login-box input {
+    padding: 0.8rem;
+    margin: 0.4rem auto;
+    border-radius: 3rem;
+    width: 90%;
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.form-group label {
+  width: 80px;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.form-group input {
+  flex: 1;
+  border-radius: 0.3rem;
+  padding: 5px;
+}
+
+.login-box button:hover{
+    transform: translate(1.5);
+}
+
+.login-box .a{
+    padding: 10px;
+}
+
+.navbar {
+    background: #9c9c9c;
+    padding: 12px 24px;
+    display: flex;
+    position: sticky;
+    margin: auto;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80vw;
+    padding: 20px;
+    box-shadow: 0 0 10px #ccc;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    
+    gap: 20px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.navbar a:hover {
+    color: #f39c12;
+}
+
+.navbar img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Profile Page Container */
+.profile-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #f9f9f9;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Section Header */
+.profile-container h2 {
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+}
+
+/* Each Card */
+.profile-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Input Styling */
+.profile-card input[type="email"],
+.profile-card input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Labels */
+.profile-card label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Buttons */
+.profile-card button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.profile-card button:hover {
+    background-color: #45a049;
+}
+
+/* Optional Error Display */
+.error {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+/* --------- Mobile Responsive --------- */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+
+    }
+
+    .container {
+        width: 90vw;
+        height: 90vh;
+        padding: 15px;
+    }
+
+    .login-box {
+        width: 50%;
+        padding: 1rem;
+    }
+
+    .form-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-group label {
+        width: 90%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .form-group input {
+        width: 90%;
+    }
+
+    table {
+        font-size: 14px;
+        display: block;
+        overflow-x: auto;
+    }
+
+    .navbar {
+        width: 100vw;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .navbar img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .profile-container {
+        width: 95%;
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    .profile-container h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .login-box input,
+    .profile-card input {
+        width: 90%;
+    }
+}

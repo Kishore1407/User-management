@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Verify Your Account</h2>
+<form method="post" action="/verify-otp" class="login-box">
+    <input type="text" name="username" placeholder="Username" required><br>
+    <input type="text" name="otp" placeholder="Enter OTP" required><br>
+    <input type="submit" value="Verify" class="btn">
+</form>
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+{% endblock %}

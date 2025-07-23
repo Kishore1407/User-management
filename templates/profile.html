@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="profile-container">
+  <h2>Admin Profile</h2>
+  
+  <div class="profile-card">
+    <form action="/profile/update" method="post">
+      <p><strong>Username:</strong> {{ username }}</p>
+      <p><strong>Email:</strong> {{email}} </p>
+    </form>
+  </div>
+
+  <div class="profile-card" style="margin-top: 30px;">
+    <h3>Change Password</h3>
+    <form action="/profile/change-password" method="post">
+      <label>Current Password:</label>
+      <input type="password" name="current_password" required><br>
+      <label>New Password:</label>
+      <input type="password" name="new_password" required><br>
+      <label>Confirm New Password:</label>
+      <input type="password" name="confirm_password" required><br>
+      <button type="submit">Change Password</button>
+    </form>
+  </div>
+</div>
+{% endblock %}

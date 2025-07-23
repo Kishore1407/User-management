@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{username}}</h2>
+
+{% if users %}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Position</th>
+        <th>Actions</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.position }}</td>
+        <td>
+            <a href="/update/{{ user.id }}" class="btn" style="background-color: #007bff;">Update</a>
+            <a href="/delete/{{ user.id }}" onclick="return confirm('Are you sure?')" class="btn" style="background-color: #dc3545;">Delete</a>
+            <a href="/user_view/{{ user.id }}" class="btn" style="background-color: #dc9635;">View</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% else %}
+  <p>No records found.</p>
+{% endif %}
+
+<!-- Add New User Button -->
+<div style="margin-bottom: 20px;gap: 10px;">
+    <a href="/add-user" class="btn">+ Add New User</a>
+</div>
+{% endblock %}
