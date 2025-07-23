@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, Depends, Request, Form
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
@@ -33,9 +34,9 @@ def is_logged_in(request: Request) -> bool:
 
 # ------------------ ROUTES ------------------
 
-@app.get("/", include_in_schema=False)
+@app.get("/", response_class=RedirectResponse)
 def root():
-    return RedirectResponse("/dashboard", status_code=303)
+    return RedirectResponse("/dashboard", status_code=307)
 
 # --- Login ---
 @app.get("/login", response_class=HTMLResponse)
@@ -150,4 +151,6 @@ def change_password(
 
 # --- Run Server ---
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
+    port = int(os.environ.get("PORT", 8000))  # Use Render's port or default to 8000
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
+
