@@ -149,6 +149,53 @@ def change_password(
     return RedirectResponse("/profile", status_code=303)
 
 
+# --- Add User ---
+@app.get("/add-user", response_class=HTMLResponse)
+def add_user_form(request: Request):
+    if not is_logged_in(request):
+        return RedirectResponse("/login")
+    return templates.TemplateResponse("user_form.html", {"request": request, "user": None, "show_navbar": True})
+
+@app.post("/add-user")
+def add_user_post(request: Request, name: str = Form(...), email: str = Form(...), position: str = Form(...)):
+    if not is_logged_in(request):
+        return RedirectResponse("/login")
+    create_user(UserIn(name=name, email=email, position=position))
+    return RedirectResponse("/dashboard", status_code=303)
+
+# --- Update User (GET and POST combined) ---
+@app.api_route("/update/{user_id}", methods=["GET", "POST"], response_class=HTMLResponse)
+def update_user_route(request: Request, user_id: int, name: str = Form(None), email: str = Form(None), position: str = Form(None)):
+    if not is_logged_in(request):
+        return RedirectResponse("/login")
+
+    if request.method == "GET":
+        user = get_user(user_id)
+        return templates.TemplateResponse("user_form.html", {"request": request, "user": user, "show_navbar": True})
+
+    # POST form submission
+    update_user(user_id, UserIn(name=name, email=email, position=position))
+    return RedirectResponse("/dashboard", status_code=303)
+
+# --- Delete User ---
+@app.get("/delete/{user_id}")
+def delete_user_view(request: Request, user_id: int):
+    if not is_logged_in(request):
+        return RedirectResponse("/login")
+    delete_user(user_id)
+    return RedirectResponse("/dashboard", status_code=303)
+
+# --- View User ---
+@app.get("/user_view/{user_id}", response_class=HTMLResponse)
+def view_user(request: Request, user_id: int):
+    if not is_logged_in(request):
+        return RedirectResponse("/login")
+    user = get_user(user_id)
+    if not user:
+        return templates.TemplateResponse("not_found.html", {"request": request})
+    return templates.TemplateResponse("user.html", {"request": request, "user": user, "show_navbar": True})
+
+
 # --- Run Server ---
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))  # Use Render's port or default to 8000
