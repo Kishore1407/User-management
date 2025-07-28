@@ -79,8 +79,8 @@ def otp_get(request: Request):
 def otp_post(request: Request, username: str = Form(...), otp: str = Form(...)):
     if verify_admin_otp(username, otp):
         return RedirectResponse("/login", status_code=303)
-    return templates.TemplateResponse("verify_otp.html", {"request": request, "error": "Invalid OTP", "show_navbar": False})
-
+    return templates.TemplateResponse("verify_otp.html",  {"request": request, "error": "Invalid OTP", "show_navbar": False})
+    
 # --- Dashboard ---
 @app.get("/dashboard", response_class=HTMLResponse)
 def dashboard(request: Request):
