@@ -1,55 +1,46 @@
-## 🛠️ User Management System
+# 👥 User Management System – FastAPI
 
-This is a simple Admin Dashboard project built with **FastAPI**, **Jinja2 templates**, and **SQLite**, allowing admin users to:
-
-- Register and log in
-- Verify OTP via email
-- Perform full CRUD operations on users
-- Manage admin profile and password securely
-
-Live Demo: [🔗 Hosted on Render](https://user-management-d3ta.onrender.com)
+A secure and responsive web-based user management system built with **FastAPI**, designed for admin control over user records, including registration with OTP verification, login/logout, profile management, and CRUD operations for users.  
+🔗 **Live demo**: [user-management-lmnk.onrender.com](https://user-management-lmnk.onrender.com)
 
 ---
 
 ## 🚀 Features
 
-- 🔐 Admin registration, login & logout
-- ✉️ OTP verification via email
-- 👤 Admin profile page with email/password update
-- 📋 Add, edit, view, and delete users
-- 🧩 Session-based authentication with cookies
-- 🎨 Responsive UI with pure HTML + CSS (no JS)
-- 📦 SQLite for lightweight database needs
+- 🔐 Admin registration with email OTP verification  
+- 🔑 Secure admin login/logout using session cookies  
+- 👤 Admin profile view and password/email update  
+- ➕ Add new users with password & Gmail validation  
+- 📝 Edit user details  
+- ❌ Delete users  
+- 👁️ View user details  
+- 📱 Fully mobile responsive UI  
+- 🔒 Passwords stored using bcrypt hashing  
+- 📧 OTP email support using Gmail SMTP
 
 ---
 
-## 🖥️ Tech Stack
+## 🛠️ Built With
 
-| Layer        | Technology             |
-|--------------|-------------------------|
-| Backend      | FastAPI                 |
-| Frontend     | Jinja2 Templates + CSS  |
-| Database     | SQLite + SQLAlchemy     |
-| Authentication | OTP + Session Cookies |
-| Deployment   | Render (Free Tier)      |
-
+- **Backend**: [FastAPI](https://fastapi.tiangolo.com/), Uvicorn  
+- **Frontend**: HTML5, CSS3, Jinja2 Templates  
+- **Database**: SQLite  
+- **Security**: bcrypt (password hashing), OTP verification  
+- **Deployment**: [Render](https://render.com/)
 
 ---
 
-## 🛠️ Local Setup
+## 📸 Screenshots
 
-```bash
-# 1. Clone the repo
-git clone https://github.com/Kishore1407/User-management.git
-cd User-management
+| Login Page | Dashboard | Profile |
+|------------|-----------|---------|
+| ![Login](https://via.placeholder.com/300x150?text=Login) | ![Dashboard](https://via.placeholder.com/300x150?text=Dashboard) | ![Profile](https://via.placeholder.com/300x150?text=Profile) |
 
-# 2. Create virtual env (optional but recommended)
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+---
 
-# 3. Install dependencies
-pip install -r requirements.txt
+## 🧑‍💻 How to Run Locally
 
-# 4. Run the server
-python main.py
-
+1. **Clone the Repo**
+   ```bash
+   git clone https://github.com/Kishore1407/User-management.git
+   cd User-management
