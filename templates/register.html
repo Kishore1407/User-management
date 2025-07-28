@@ -1,14 +1,23 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <h2>Register New Admin</h2>
 <form class="login-box" method="post" action="/register">
-    <input type="text" name="username" placeholder="Username" required><br>
-    <input type="password" name="password" placeholder="Password" required><br>
-    <input type="email" name="email" placeholder="Email (Required)"><br>
-    <input type="submit" value="Register" class="btn">
-    <a href="/login" class="btn" style="background-color: #007bff;">Back to Login</a>
+  <input type="text" name="username" placeholder="Username" required /><br />
+  <input
+    type="email" name="email" placeholder="Gmail" required
+        pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
+        title="Must be a valid Gmail address (e.g., example@gmail.com)"
+    /><br />
+  <input
+    type="password" name="password" placeholder="Password"
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+        title="Must contain at least 8 characters, one uppercase, one lowercase, one number, and one special character"
+    required
+    /><br />
+  <input type="submit" value="Register" class="btn" />
+  <a href="/login" class="btn" style="background-color: #007bff"
+    >Back to Login</a
+  >
 </form>
 {% if error %}
-<p style="color:red;">{{ error }}</p>
-{% endif %}
-{% endblock %}
+<p style="color: red">{{ error }}</p>
+{% endif %} {% endblock %}
