@@ -10,13 +10,15 @@
     <nav class="navbar">
     <div class="nav-links">
         <a href="/dashboard">Dashboard</a>
-        <a href="/logout">Logout</a>
     </div>
-    <div class="nav-links">
-        <a href="/profile">
-            <img src="{{ url_for('static', path='profile.png') }}" alt="Profile" />
-        </a>
-    </div>
+    <details>
+        <summary><img src="{{ url_for('static', path='profile.png') }}" alt="Profile" /></summary>
+        <div class="dropdown-actions">
+            <a href="/profile">Profile</a>
+            <a href="/logout">Logout</a>    
+            </a>
+        </div>
+    </details>
     </nav>
     {% endif %}
     <div class="container">
