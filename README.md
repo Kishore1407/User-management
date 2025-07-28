@@ -30,17 +30,97 @@ A secure and responsive web-based user management system built with **FastAPI**,
 
 ---
 
-## 📸 Screenshots
-
-| Login Page | Dashboard | Profile |
-|------------|-----------|---------|
-| ![Login](https://via.placeholder.com/300x150?text=Login) | ![Dashboard](https://via.placeholder.com/300x150?text=Dashboard) | ![Profile](https://via.placeholder.com/300x150?text=Profile) |
-
----
-
 ## 🧑‍💻 How to Run Locally
 
 1. **Clone the Repo**
    ```bash
    git clone https://github.com/Kishore1407/User-management.git
    cd User-management
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the Server**
+   ```bash
+   uvicorn main:app --reload
+   ```
+
+4. Open your browser and go to:
+   ```
+   http://127.0.0.1:8000
+   ```
+
+---
+
+## 🌐 Deployment (Render)
+
+Already deployed on [Render](https://render.com/).  
+To deploy manually:
+
+- Create new Web Service
+- Set build command:  
+  ```bash
+  pip install -r requirements.txt
+  ```
+- Set start command:  
+  ```bash
+  uvicorn main:app --host 0.0.0.0 --port $PORT
+  ```
+- Add environment variables if needed
+
+---
+
+## 🔐 Environment Variables (for Email OTP)
+
+Create a `.env` file or set in Render dashboard:
+```env
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=465
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASS=your-app-password
+```
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── main.py
+├── auth_db.py
+├── crud.py
+├── models.py
+├── utils.py
+├── static/
+│   └── style.css
+├── templates/
+│   └── *.html
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## ✨ Future Enhancements
+
+- ✅ Add pagination & search filters
+- ✅ Export user data to Excel/PDF
+- 🚧 Dark mode support
+- 🚧 REST API access (with Swagger docs)
+
+---
+
+## 🤝 Contributions
+
+All contributions, issues, and suggestions are welcome!  
+Feel free to fork the repository and submit a pull request.
+
+---
+
+## 📬 Contact
+
+Made with ❤️ by **Kishore**  
+🔗 [GitHub Profile](https://github.com/Kishore1407)
