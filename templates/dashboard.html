@@ -17,10 +17,15 @@
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.position }}</td>
-        <td>
-            <a href="/update/{{ user.id }}" class="btn" style="background-color: #007bff;">Update</a>
-            <a href="/delete/{{ user.id }}" onclick="return confirm('Are you sure?')" class="btn" style="background-color: #dc3545;">Delete</a>
-            <a href="/user_view/{{ user.id }}" class="btn" style="background-color: #dc9635;">View</a>
+        <td class="action-menu">
+        <details>
+            <summary>⋮</summary>
+            <div class="dropdown-actions">
+            <a href="/user_view/{{ user.id }}">View</a>
+            <a href="/update/{{ user.id }}">Edit</a>
+            <a href="/delete/{{ user.id }}" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+            </div>
+        </details>
         </td>
     </tr>
     {% endfor %}
