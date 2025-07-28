@@ -148,7 +148,6 @@ def change_password(
         })
     return RedirectResponse("/profile", status_code=303)
 
-
 # --- Add User ---
 @app.get("/add-user", response_class=HTMLResponse)
 def add_user_form(request: Request):
@@ -195,9 +194,7 @@ def view_user(request: Request, user_id: int):
         return templates.TemplateResponse("not_found.html", {"request": request})
     return templates.TemplateResponse("user.html", {"request": request, "user": user, "show_navbar": True})
 
-
 # --- Run Server ---
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))  # Use Render's port or default to 8000
     uvicorn.run("main:app", host="0.0.0.0", port=port)
-
